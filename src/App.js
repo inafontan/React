@@ -21,7 +21,7 @@ function App() {
              
       <h1 style={{ fontSize:'20px', fontWeight:'bold', background: 'red', padding: '5px', margin: '5px'}}> Bienvenidos a la tienda </h1>
       
-      <h2 style= {{ fontSize:'15px',fontWeight:'bold', padding: '10px', margin:'10px'}}> Productos </h2>
+      <h2 style= {{ fontSize:'20px',fontWeight:'bold', padding: '10px', margin:'10px'}}> Productos </h2>
             
       <ItemListContainer/>
      

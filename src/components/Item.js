@@ -1,8 +1,8 @@
 export const items = [
-    {id: 1, name:'All in One', imgUrl:'https://github.com/inafontan/React/blob/master/src/imagenes/allinone.jpg', precio: '$100.00'},
-    {id: 2, name:'Bici Fija', img:'src/components/imagenes/bicifija.jpg', precio: '$100.00'}, 
-    {id: 3, name:'Espejo Madera', img:'src/components/imagenes/espejomadera.jpg', precio: '$100.00'},
-    {id: 4, name:'Monitor Samsung', img:'src/components/imagenes/monitor.jpg', precio: '$100.00'},
-    {id: 5, name: 'PLay 4', img: 'src/components/imagenes/play4.png', precio: '$100.00' },
+    {id: 1, name:'All in One', imgUrl:'https://www.tecnogeek.com/images/notas13/c205/c205-01.jpg', precio: '$100.00'},
+    {id: 2, name:'Bici Fija', imgUrl:'https://images.fravega.com/f1000/a97eb44407d6a9761d7006b21848a33a.jpg', precio: '$100.00'}, 
+    {id: 3, name:'Espejo Madera', imgUrl:'https://www.elmueble.com/medio/2021/12/24/espejo-cuadrado-madera-la-redoute_b303b7b5_1200x1200.jpeg', precio: '$100.00'},
+    {id: 4, name:'Monitor Samsung', imgUrl:'https://model-computer.com/wp-content/uploads/2021/03/Samsung-2033SNPLUS.jpg', precio: '$100.00'},
+    {id: 5, name: 'PLayStation 4', imgUrl: 'https://www.necxus.com.ar/products_image/12720/1000x1000_1.jpg', precio: '$100.00' },
 ]
  
