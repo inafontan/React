@@ -5,6 +5,8 @@ import ItemListContainer from './components/ItemListContainer';
 import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
 import CartWidget from './components/CartWidget';
 
+
+
 function App() {
    
   const stylesP = {
@@ -16,13 +18,13 @@ function App() {
   return (                      //dentro del return le decimos que se va a ver
     <>
       <NavBar />
-       
+             
+      <h1 style={{ fontSize:'20px', fontWeight:'bold', background: 'red', padding: '5px', margin: '5px'}}> Bienvenidos a la tienda </h1>
       
-      <h1 style={{ background: 'red', padding: '5px', margin: '5px'}}>Hola!</h1>
-      <p style={stylesP}>Desafío Crear la App utilizando Cli - Clase 1/2</p>
-      <button class="btn">Click Aquí</button>
-      
-      <ItemListContainer saludo='Bienvenido a la tienda!' />
+      <h2 style= {{ fontSize:'15px',fontWeight:'bold', padding: '10px', margin:'10px'}}> Productos </h2>
+            
+      <ItemListContainer/>
+     
     </>
   );
 }

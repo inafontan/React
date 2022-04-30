@@ -1,6 +1,6 @@
 const CartWidget = () => {
   return (
-     <div class="navbar bg-base-100">
+     <div class="navbar bg-base-50">
   <div class="flex-1">
      
   </div>
@@ -14,7 +14,7 @@ const CartWidget = () => {
       </label>
       <div tabindex="0" class="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
         <div class="card-body">
-          <span class="font-bold text-lg">8 Items</span>
+          <span class="font-bold text-m">8 Items</span>
           <span class="text-info">Subtotal: $999</span>
           <div class="card-actions">
             <button class="btn btn-primary btn-block">View cart</button>
