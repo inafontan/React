@@ -1,30 +1,23 @@
-import { useEffect, useState } from "react";
-import { items as itemsInfo } from "./Item";
-import ItemList from "./ItemList";
+import React, {useEffect, useState} from "react";
+import { ItemList } from "./ItemList";  
+import { info } from "../info/info";
+import Loading from "../components/Loading";
 
-const ItemListContainer = () => {
-  
-const [items, setItems] = useState([])
+export const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const getItems = new Promise((resolve, reject) => {
+
+    const getItems = new Promise((resolve) => {
       setTimeout(() => {
-resolve (itemsInfo)
-      }, 1000)
-    })
-    
-    getItems.then((result) => {
-      setItems(result)
-    })
-  }, [])
+        resolve(info);
+      }, 1000);
+    });
 
-  return (
-    <div style={{ display: 'flex', flexDirection: 'row', justifyContent:'center'}}>
-      {items.map((item) => (
-        <ItemList key={item.id} itemInfo={item} />
-      ))}
-    </div>
-  )
+    getItems.then((res) => {
+      setItems(res);
+    });
+  }, []);
+
+  return <ItemList items={items} />;
 }
-
-export default ItemListContainer

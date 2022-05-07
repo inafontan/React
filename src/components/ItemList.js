@@ -1,13 +1,12 @@
- const ItemList = ( {itemInfo} ) => {
+import React from "react";
+import { Item } from "./Item";
+
+export const ItemList = ({ items }) => {
   return (
-    <div style={{
-      border: 'solid purple 5px', margin: '10px', padding: '5px', width: '250px', height: '300px',
-      display: 'flex', flexDirection: 'column', alignItems: 'center',
-      boxShadow: ' 0 0.125rem 0.3125rem 0 rgba(2, 2, 0, 0.678)'}}>
-      <img src={itemInfo.imgUrl}/>
-      <h1> <strong> {itemInfo.name}</strong></h1>
-      <h2> <strong> {itemInfo.precio}</strong></h2>
+    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+      {items.map((item) => (
+        <Item item={item} />
+      ))}
     </div>
-  )
+  );
 }
-export default ItemList;

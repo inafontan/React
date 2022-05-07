@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import { ItemListContainer } from './/components/ItemListContainer';
 import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
 import CartWidget from './components/CartWidget';
 
