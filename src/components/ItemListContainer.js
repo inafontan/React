@@ -1,17 +1,23 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { ItemList } from "./ItemList";  
 import { info } from "../info/info";
-import Loading from "../components/Loading";
+import Loading from "./Loading";
+
 
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setItems(info);
+      setIsLoading(false);
+    }, 1000);
+    
 
     const getItems = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(info);
-      }, 1000);
+      resolve(info);
     });
 
     getItems.then((res) => {
@@ -19,5 +25,9 @@ export const ItemListContainer = () => {
     });
   }, []);
 
-  return <ItemList items={items} />;
+  return (
+  <>
+      {isLoading ? <Loading /> : <ItemList items={items} />}
+    </>
+  );
 }
