@@ -1,11 +1,10 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Saludo from './components/Saludo';
 import NavBar from './components/NavBar';
 import { ItemListContainer } from './/components/ItemListContainer';
-import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
-import CartWidget from './components/CartWidget';
-
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ItemDetail from './components/ItemDetail';
 
 function App() {
    
@@ -16,16 +15,20 @@ function App() {
 }
 
   return (                      //dentro del return le decimos que se va a ver
+   
     <>
-      <NavBar />
-             
-      <h1 style={{ fontSize:'20px', fontWeight:'bold', background: 'red', padding: '5px', margin: '5px'}}> Bienvenidos a la tienda </h1>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+         <Route path='/' element={<Saludo />} />
+         <Route path='/info/:infoId' element={<ItemDetail/>} />
+        </Routes>
+      </BrowserRouter>
       
-      <h2 style= {{ fontSize:'20px',fontWeight:'bold', padding: '10px', margin:'10px'}}> Productos </h2>
-            
-      <ItemListContainer/>
-     
+      <ItemListContainer />
     </>
+     
+    
   );
 }
 
