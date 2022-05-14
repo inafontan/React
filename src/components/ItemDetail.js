@@ -1,39 +1,27 @@
-import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
-const ItemDetail = () => {
+import React from 'react';
 
-    const { infoId } = useParams()
-    const [info, setInfoDetail] = useState({})
-    
-    useEffect(  () => {
+export const ItemDetail = ({
+  id,
+  name,
+  categoria,
+  descripción,
+  imgUrl,
+  precio,
+}) => {
+  return (
+    <div style={{
+      border: 'solid purple 5px', margin: '10px', padding: '5px', marginLeft:'300px',
+      display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', 
+      boxShadow: ' 0 0.125rem 0.3125rem 0 rgba(2, 2, 0, 0.678)', width: '700px', height: '400px'}} >
         
-        (async () => {
-            const info = await getItemDetail()
-            if (info) {
-                setInfoDetail(info)
-            }
-        })()
-
-    }, [infoId])
-
-    const getItemDetail = () => {
-        return new Promise ((resolve) => {
-            setTimeout(() => { 
-                resolve (info.find(item => item.id === infoId))
-            }, 2000)
-        })
-    }
-
-    return (
-        <>
-        <div> ItemDetail - {infoId}</div>
-        <strong> {info.id} </strong>
-        <strong> {info.name} </strong>
-        <strong> {info.precio} </strong>
-        
-        <Link to="/"> Volver </Link>    
-        </>
-    )
-}
-export default ItemDetail
-
+      <img src={imgUrl} alt={`${id}-${name}`}
+        style={{width: 'auto', height: '350px', marginTop: '20px'}}/>
+      <div>
+        <h1>{name}</h1>
+        <p>  {categoria} </p>
+        <p> <strong> {descripción}</strong></p>
+        <h2>{precio}</h2>
+      </div>
+    </div>
+  );
+};

@@ -1,38 +1,32 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
+import { ItemDetail } from './ItemDetail';
+import { data } from '../data/data';
+import { useParams } from 'react-router-dom';
 
+export const ItemDetailContainer = () => {
+  const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(true);
 
-const ItemDetail = () => {
+  const { itemId } = useParams();
 
-  const [info, setInfo] = useState([])
-  const [loading, setLoading] = useState( true )
-  
+  console.log(itemId);
+
   useEffect(() => {
-    getInfo().then( data => {
-        setInfo(data)
-        setLoading(false)
-    }
-      )
-  }, [])
+    setLoading(true);
+    const getItems = new Promise((resolve) => {
+      setTimeout(() => {
+        const myData = data.find((item) => item.id === itemId);
 
-    const getInfo = () => {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(info)
-            }, 2000)
-        })
-    }
+        resolve(myData);
+      }, 1000);
+    });
 
-    return (
-        <>
-        <div>
-            {loading ? <div>Loading...</div> : <div>
-                <div> ItemDetail - {info}</div>
-                <strong> {info.id} </strong>
-                <strong> {info.name} </strong>
-                <strong> {info.precio} </strong>        
-                <Link to="/"> Volver </Link>
-            </div>} 
-            </div>
-        </>
-    )
-}
+    getItems
+      .then((res) => {
+        setProduct(res);
+      })
+      .finally(() => setLoading(false));
+  }, [itemId]);
+
+  return loading ? <h2>Cargando</h2> : <ItemDetail {...product} />;
+};

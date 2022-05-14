@@ -1,36 +1,27 @@
 import React from 'react';
-import './App.css';
-import Saludo from './components/Saludo';
-import NavBar from './components/NavBar';
-import { ItemListContainer } from './/components/ItemListContainer';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ItemDetail from './components/ItemDetail';
+import { NavBar } from './components/NavBar';
 
-function App() {
-   
-  const stylesP = {
-    border: 'solid 3px black',  
-    padding: '10px',  
-    margin: '10px',
-}
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-  return (                      //dentro del return le decimos que se va a ver
-   
-    <>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-         <Route path='/' element={<Saludo />} />
-         <Route path='/info/:infoId' element={<ItemDetail/>} />
-        </Routes>
-      </BrowserRouter>
-      
-      <ItemListContainer />
-    </>
-     
-    
+import { ItemListContainer } from './components/ItemListContainer';
+import { ItemDetailContainer } from './components/ItemDetailContainer';
+
+export default function App() {
+ 
+  return (
+    <BrowserRouter>
+      <NavBar />
+
+      <Routes>
+        <Route path="/" element={<ItemListContainer greeting={'Inicio'} />} />
+        
+        <Route path="/categoria/:catId" element={<ItemListContainer greeting={'Resumen'} />} />
+
+        <Route path="/product/:itemId" element={<ItemDetailContainer />} />
+        
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+
+    </BrowserRouter>
   );
 }
-
-export default App;
-

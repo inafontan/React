@@ -1,33 +1,44 @@
-import React, { useEffect, useState } from "react";
-import { ItemList } from "./ItemList";  
-import { info } from "../info/info";
-import Loading from "./Loading";
+import React, { useState, useEffect } from 'react';
+import { ItemList } from './ItemList';
+import { data } from '../data/data';
 
+import { useParams } from 'react-router-dom';
 
-export const ItemListContainer = () => {
+export const ItemListContainer = ({ greeting }) => {
   const [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+
+  const [loading, setLoading] = useState(true);
+
+  const { catId } = useParams();
 
   useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setItems(info);
-      setIsLoading(false);
-    }, 1000);
-    
-
+    setLoading(true);
     const getItems = new Promise((resolve) => {
-      resolve(info);
+      setTimeout(() => {
+
+        const myData = catId
+          ? data.filter((item) => item.categoria === catId)
+          : data;
+
+        resolve(myData);
+      }, 1000);
     });
 
-    getItems.then((res) => {
-      setItems(res);
-    });
-  }, []);
+    getItems
+      .then((res) => {
+        setItems(res);
+      })
+      .finally(() => setLoading(false));
+  }, [catId]);
 
-  return (
-  <>
-      {isLoading ? <Loading /> : <ItemList items={items} />}
+  return loading ? (
+    <h2>Cargando</h2>
+  ) : (
+      <>
+         
+      <h3 style={{ textAlign: 'left'}}>{greeting}</h3>
+          <ItemList items={items} />
+         
     </>
   );
-}
+};
