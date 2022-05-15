@@ -30,3 +30,6 @@ export const ItemDetailContainer = () => {
 
   return loading ? <h2>Cargando</h2> : <ItemDetail {...product} />;
 };
+
+export const getItems = () => {
+}

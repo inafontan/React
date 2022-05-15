@@ -1,7 +1,5 @@
 # Venta de Whatsapp
 
-<https://media.giphy.com/media/TLCpf8koMoNEWkToQD/giphy.gif>
-
 E-commerce que nace de la necesidad de la venta de articulos personalss por mudanza, pretendiendo compartir entre los contactos de whatsapp solo un link.
 
 Cuenta con
@@ -13,3 +11,5 @@ Cuenta con
 ## Dependencias
 
 React Router Dom para la navegación
+DaisyUI para dar estilo a distintos componentes
+Bootstrap para dar estilo a a NavBar

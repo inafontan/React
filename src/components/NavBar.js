@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import "./navBar.css";
 
 export const NavBar = () => {
   const categories = [
@@ -9,36 +10,20 @@ export const NavBar = () => {
     { id: 'c3', address: 'categoria/Decoración', text: 'Decoración' },
   ];
 
-  const styleNav = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '1rem 1rem',
-    backgroundColor: 'purple',
-    fontSize: '1.5rem',
-    fontfamily: 'Monospace',
-    fontWeight: 'bold',
-    border: '1px solid black',
-    boxShadow: '0 0.5rem 1rem rgba(0,0,0,1)',
-    color: 'white',
-  };
-
+  
   return (
-    <div style={styleNav}>
-      {categories.map((cat) => {
-        return (
-          <div className="links" key={cat.id}>
-            <NavLink
-              to={cat.address}
-              className={({ isActive }) => (isActive ? 'activeClass' : '')}
-            >
-              {cat.text}
-            </NavLink>
-          </div>
-        );
-      })}
-    </div>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">      
+      <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+          {categories.map((cat) => (
+            <li key={cat.id} className="nav-item">
+              <NavLink className="nav-link" to={cat.address}>
+                {cat.text}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
   );
-};
-
-
+}

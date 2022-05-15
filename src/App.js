@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavBar } from './components/NavBar';
-
+import CartWidget from './components/CartWidget';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import { ItemListContainer } from './components/ItemListContainer';
@@ -21,6 +21,8 @@ export default function App() {
         
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+
+      <CartWidget />
 
     </BrowserRouter>
   );

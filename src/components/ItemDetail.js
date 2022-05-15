@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ItemCount from './ItemCount';
+
 
 export const ItemDetail = ({
   id,
@@ -7,7 +9,21 @@ export const ItemDetail = ({
   descripción,
   imgUrl,
   precio,
+  stock,
 }) => {
+
+const [terminar , setTerminar] = useState(false);
+
+  const onAdd = (count) => {
+    setTerminar(true);
+  }
+
+  {terminar ? (
+        <button className='btn btn-primary'> Terminar Compra </button>  
+      ) : (
+        <ItemCount stock={stock} onAdd={onAdd} />
+      )}
+
   return (
     <div style={{
       border: 'solid purple 5px', margin: '10px', padding: '5px', marginLeft:'300px',
@@ -22,6 +38,8 @@ export const ItemDetail = ({
         <p> <strong> {descripción}</strong></p>
         <h2>{precio}</h2>
       </div>
+      
     </div>
   );
 };
+
