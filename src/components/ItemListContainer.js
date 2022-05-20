@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { ItemList } from './ItemList';
-import { data } from '../data/data';
-
 import { useParams } from 'react-router-dom';
+import { productos } from '../data/data';
+import ItemList from './ItemList';
 
-export const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = ({ greeting }) => {
   const [items, setItems] = useState([]);
 
   const [loading, setLoading] = useState(true);
@@ -17,8 +16,8 @@ export const ItemListContainer = ({ greeting }) => {
       setTimeout(() => {
 
         const myData = catId
-          ? data.filter((item) => item.categoria === catId)
-          : data;
+          ? productos.filter((item) => item.categoria === catId)
+          : productos;
 
         resolve(myData);
       }, 1000);
@@ -42,3 +41,5 @@ export const ItemListContainer = ({ greeting }) => {
     </>
   );
 };
+
+export default ItemListContainer;

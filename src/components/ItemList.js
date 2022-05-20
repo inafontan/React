@@ -1,12 +1,16 @@
 import React from 'react';
-import { Item } from './Item';
+import Item from './Item';
 
-export const ItemList = ({ items }) => {
+const ItemList = ({ items }) => {
   return (
-    <section>
-      {items?.map((item) => (
-        <Item {...item} key={item.id} />
+    <>
+			<div className="container mx-auto flex flex-wrap gap-4 justify-center">
+      {items?.map((producto) => (
+        <Item key={producto.id} producto={producto}/>
       ))}
-    </section>
+      </div>
+    </>
   );
 };
+
+export default ItemList;

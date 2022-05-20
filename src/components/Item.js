@@ -1,22 +1,58 @@
+//PRODUCTO EN EL INICIO DE LA PAGINA
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const Item = ({ id, categoria, name, imgUrl, precio}) => {
-  return (
-    <Link to={`/product/${id}`}>
-       
-      <div style={{
-      border: 'solid purple 5px', margin: '10px', padding: '5px', 
-      display: 'flex', flexDirection: 'column', alignItems: 'center', 
-        boxShadow: ' 0 0.125rem 0.3125rem 0 rgba(2, 2, 0, 0.678)', width: '250px', height: '250px'
-      }}>
-        
-          <img src={imgUrl} alt={name} 
-          style={{ width: '250px', height: '220px'}} />
-        <span>{name}</span>
-        <span>{precio}</span>
-        </div>
-      
-    </Link>
-  );
-};
+const styleCards = {
+	display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+	width: 'auto',
+	height: 'auto',
+	margin: '20px',
+    marginTop: '20px',
+	marginLeft: '30px',
+	borderRadius: '10px',
+	backgroundColor: 'white',
+    boxShadow: '0px 1px 10px #000000',
+	justifyContent: 'center',
+	alignItems: 'center',
+	padding: '10px',
+	fontSize: '20px',
+	fontWeight: 'bold',
+	color: '#000000',
+	textAlign: 'center',
+	textDecoration: 'none',
+ 	border: '2px solid #000000',
+	borderRadius: '10px',
+}
+const Item = ({ producto }) => {
+	return (
+		<>
+			<div style={styleCards}>
+				<figure>
+					<img style={{
+						margin: '20px', padding: '5px', marginLeft: '180px',
+						width: 'auto', height: '200px'}} src={producto.imgUrl}   />
+				</figure>
+				<div className="card-body">
+					<h2 className="card-title">{producto.name}</h2>
+					{producto.descripción}
+					<div className="inline-block align-bottom mr-5">
+						<span className="font-bold text-5xl leading-none align-baseline">
+							{producto.precio}
+						</span>
+					</div>
+					<div className="card-actions justify-end">
+						<Link to={`/product/${producto.id}`} className="btn btn-primary">
+							Ver más
+						</Link>
+					</div>
+				</div>
+				</div>
+			
+		</>
+	)
+}
+
+export default Item
+export { styleCards }

@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react"
-import { getItems } from "../ItemDetailContainer"
+import { getItems } from "../../data/data"
 
 
 const AppContext = createContext()
@@ -7,13 +7,13 @@ const AppContext = createContext()
 export const useAppContext = () => useContext(AppContext)
 
 const AppContextProvider = ({ children }) => {
-	const [products, setProducts] = useState([])
+	const [productos, setProductos] = useState([])
 
 	useEffect(() => {
-		getItems().then((resp) => setProducts(resp))
+		getItems().then((resp) => setProductos(resp))
 	})
 	return (
-		<AppContext.Provider value={{ products }}>{children}</AppContext.Provider>
+		<AppContext.Provider value={{ productos }}>{children}</AppContext.Provider>
 	)
 }
 

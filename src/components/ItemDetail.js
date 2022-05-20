@@ -1,45 +1,44 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
+import {styleCards} from './Item.js';
 
-
-export const ItemDetail = ({
-  id,
-  name,
-  categoria,
-  descripción,
-  imgUrl,
-  precio,
-  stock,
-}) => {
-
-const [terminar , setTerminar] = useState(false);
+const ItemDetail = ({ producto }) => {
+  const { id, categoria, descripción, name, imgUrl, precio, stock } =
+    producto;
+  
+  const [terminar, setTerminar] = useState(false);
 
   const onAdd = (count) => {
     setTerminar(true);
+    console.log(count);
   }
 
-  {terminar ? (
-        <button className='btn btn-primary'> Terminar Compra </button>  
-      ) : (
-        <ItemCount stock={stock} onAdd={onAdd} />
-      )}
-
   return (
-    <div style={{
-      border: 'solid purple 5px', margin: '10px', padding: '5px', marginLeft:'300px',
-      display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', 
-      boxShadow: ' 0 0.125rem 0.3125rem 0 rgba(2, 2, 0, 0.678)', width: '700px', height: '400px'}} >
-        
-      <img src={imgUrl} alt={`${id}-${name}`}
-        style={{width: 'auto', height: '350px', marginTop: '20px'}}/>
-      <div>
-        <h1>{name}</h1>
-        <p>  {categoria} </p>
-        <p> <strong> {descripción}</strong></p>
-        <h2>{precio}</h2>
-      </div>
-      
-    </div>
-  );
-};
+		<>
+			<div style={styleCards}>
+        <img src={imgUrl} style={{ width: '300px', height: '250px', marginTop: '20px' }} />
+        <h1 className="text-5xl font-bold">{name}</h1>
+        <p className="py-6">{categoria}</p>
+        <p className="py-6">{descripción}</p>
+        <div className="inline-block align-bottom mr-5">
+          <span className="font-bold text-5xl leading-none align-baseline">
+            {precio}
+          </span>
+          {terminar ? (
+            <Link to="/cart" className="btn bg-primary text-white btn-block ">
+              Terminar Compra
+            </Link>
 
+          ) : (
+            <ItemCount stock={stock} onAdd={onAdd} id={id} />
+          )}
+        </div>
+      </div>
+    </>
+	)
+}
+      
+
+
+export default ItemDetail

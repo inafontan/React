@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react"
+import { productos } from "../../data/data"
 
 const CartContext = createContext()
 
@@ -16,40 +17,40 @@ const CartContextProvider = ({ children }) => {
 
         if (productoIsInCart) {
             newCart[
-                newCart.findIndex((item) => item.id === productoIsInCart.id)
+                newCart.findIndex((prod) => prod.id === productoIsInCart.id)
             ].quantity += cantidad
 
             setCart(newCart)
             return
         }
         
-        producto.quantity = cantidad
+        productos.quantity = cantidad
         setCart([...newCart, producto])
     }
 
-    const removeFromCart = (id) => {
+    const deleteFromCart = (producto) => {
         const newCart = [...cart]
 
-        const productoIsInCart = isInCart(id)
+        const itemIsInCart = isInCart(producto.id)
 
-        if (!productoIsInCart) {
+        if (!itemIsInCart) {
             return
         }
 
-        const deleteProducto = newCart.filter((item) => item.id === id)
+        const deleteItem = newCart.filter((prod) => prod.id !== producto.id)
 
-        setCart(deleteProducto)
+        setCart(deleteItem)
     }
 
     const deleteCart = () => setCart([])
-    console.log (cart)    
+      
 
     return (
         <CartContext.Provider
             value={{
                 cart,
                 addToCart,
-                removeFromCart,
+                deleteFromCart,
                 deleteCart,
                 setCart,
             }}
