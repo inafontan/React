@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useAppContext } from "../components/context/AppContext"
 import { useCartContext } from "../components/context/CartContext"
-
+import { Link } from "react-router-dom"
 const ItemCount = ({ stock, onAdd, id }) => {
 	const [count, setCount] = useState(0)
 
@@ -24,11 +24,6 @@ const ItemCount = ({ stock, onAdd, id }) => {
 	const handleClick = (id, cantidad) => {
 		const findProduct = productos.find(producto => producto.id === id)
 		addToCart(findProduct, cantidad)
-
-		if (!findProduct) {
-			alert("No se encontro el producto")
-			return 
-		}
 		
 		addToCart(findProduct, cantidad)
 		onAdd(count)
@@ -40,7 +35,7 @@ const ItemCount = ({ stock, onAdd, id }) => {
 				<button
 					className="bg-primary text-white btn-block"
 					onClick={handleRemove}
-					 
+					disabled={count === 0}
 				>
 					-
 				</button>
@@ -54,12 +49,12 @@ const ItemCount = ({ stock, onAdd, id }) => {
 			</div>
 			 
 			<button
-				className="bg-primary text-white btn-block"
+				className="bg-primary text-white btn"
 				onClick={() => handleClick(id, count)}
-				
 			>
 				Agregar al carrito
 			</button> 
+			 <button className="btn primary"> <Link to="/"> Volver </Link></button>
 		</>
 	)
 }

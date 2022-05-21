@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState } from "react"
-import { productos } from "../../data/data"
 
 const CartContext = createContext()
 
@@ -24,8 +23,7 @@ const CartContextProvider = ({ children }) => {
             return
         }
         
-        productos.quantity = cantidad
-        setCart([...newCart, producto])
+        setCart([...newCart, {producto, quantity: cantidad}])
     }
 
     const deleteFromCart = (producto) => {
@@ -43,6 +41,14 @@ const CartContextProvider = ({ children }) => {
     }
 
     const deleteCart = () => setCart([])
+
+    const calcPrecioCart = () => {
+        let total = 0
+        cart.forEach((item) => {
+            total += item.producto.precio * item.quantity
+        })
+        return total
+    }
       
 
     return (
@@ -53,11 +59,14 @@ const CartContextProvider = ({ children }) => {
                 deleteFromCart,
                 deleteCart,
                 setCart,
+                calcPrecioCart,
             }}
         >
             {children}
         </CartContext.Provider>
     )
-}
+    }
+    
+
 
 export default CartContextProvider

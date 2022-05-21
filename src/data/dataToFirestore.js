@@ -1,4 +1,24 @@
-export const productos = [
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, query, where, getDocs, getDoc, setDoc, doc, addDoc} from 'firebase/firestore/lite'
+
+// Completar con las credenciales de Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyDVz7oW9Bl159kelrL9UJ9oktsFCutRouc",
+  authDomain: "productosenventa.firebaseapp.com",
+  projectId: "productosenventa",
+  storageBucket: "productosenventa.appspot.com",
+  messagingSenderId: "1047351683433",
+  appId: "1:1047351683433:web:60d5bfa20bf1c54ccff5f8",
+  measurementId: "G-QXHB0PZ0CZ"
+};
+  
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+//PRODUCTOS contiene todos nuestros items a publicar en nuestra colección de Firestore
+
+const productos = [
     {
         id: 1,
         categoria: 'Informática',
@@ -10,7 +30,7 @@ export const productos = [
     },
     {
         id: 2,
-        categoria: 'Cuidado Personal',
+        categoria: 'CuidadoPersonal',
         descripción: 'Sin uso',
         name: 'Bici Fija',
         imgUrl: 'http://ranbak.com.ar/timthumb.php?src=/archivos/productos/16015129521515_400n2.jpg&h=1000&w=1000',
@@ -66,18 +86,26 @@ export const productos = [
     {
         id: 8,
         categoria: 'Electrodomésticos',
-        descripción: 'Ventilador 3 posiciones',
+        descripción: '1Tb - Con 10 Juegos - 2 Joystick',
         name: 'Ventilador de Pie',
         imgUrl: 'https://raw.githubusercontent.com/inafontan/ventadewhatsapp/04d7c28d503b55fc6abc37e574713b5211b56978/src/imagenes/ventiladorpie.jpg',
         precio: '$100.00',
         stock: '4'
-    },
-]
+    },    
+];
 
-const task = new Promise((resp) => {
-	resp(productos)
-}, 2000)
+  async function dataToFirebase() {
+    productos.forEach((item) => {     
 
-export const getItems = () => {
-	return task
+        const miColeccion = collection(db, "productosenventa");
+        const newDoc = doc(miColeccion);
+
+        setDoc(newDoc, item).then(() => {
+          console.log("Document written with ID: ", newDoc.id)})
+        .catch(err => {
+            console.error("Error adding document: ", err);
+        });
+    });
 }
+
+export default dataToFirebase;

@@ -4,7 +4,7 @@ import { productos } from '../data/data';
 import ItemList from './ItemList';
 
 const ItemListContainer = ({ greeting }) => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState();
 
   const [loading, setLoading] = useState(true);
 

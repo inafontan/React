@@ -7,7 +7,7 @@ export const NavBar = () => {
   const categories = [
     { id: 'all', address: '/', text: 'Venta de Whatsapp' },
     { id: 'c1', address: 'categoria/Informática', text: 'Informática' },
-    { id: 'c2', address: 'categoria/CuidadoPersonal', text: 'Cuidado Personal' },
+    { id: 'c2', address: 'categoria/Cuidado Personal', text: 'Cuidado Personal' },
     { id: 'c3', address: 'categoria/Decoración', text: 'Decoración' },
     { id: 'c4', address: 'categoria/Electrodomésticos', text: 'Electrodomésticos' },
     { id: 'c5', address: 'categoria/Audio & Video', text: 'Audio & Video' },
