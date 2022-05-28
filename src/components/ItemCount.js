@@ -37,7 +37,7 @@ const ItemCount = ({ stock, onAdd, id }) => {
 				>
 					-
 				</button>
-				<span className="text-5xl">{ count }</span>
+				<span className="text-5xl"> { count } </span>
 				<button
 					className="bg-primary text-white btn-block"
 					onClick={handleAdd}
