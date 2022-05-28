@@ -6,11 +6,11 @@ const styleCards = {
 	display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-	width: 'auto',
+	width: '600px',
 	height: 'auto',
 	margin: '20px',
     marginTop: '20px',
-	marginLeft: '30px',
+	marginLeft: '250px',
 	borderRadius: '10px',
 	backgroundColor: 'white',
     boxShadow: '0px 1px 10px #000000',
@@ -31,7 +31,7 @@ const Item = ({ producto }) => {
 			<div style={styleCards}>
 				<figure>
 					<img style={{
-						margin: '20px', padding: '5px', marginLeft: '180px',
+						margin: '20px', padding: '5px', marginLeft: '80px',
 						width: 'auto', height: '200px'}} src={producto.imgUrl}   />
 				</figure>
 				<div className="card-body">
