@@ -13,5 +13,37 @@ const firebaseConfig = {
 };
   
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
+// Traer TODOS los items
+export const getItems = async () => {
+	const items = await getDocs(collection(db, "productos"))
+	return items
+}
+
+// Traer UN item
+export const getItem = async (id) => {
+	const item = await getDoc(doc(db, "´productos", id))
+	return item
+}
+
+// Generación de order
+export const generateOrder = async (order) => {
+	const newOrder = addDoc(collection(db, "orders"), {
+		...order,
+		date: Timestamp.fromDate(new Date()),
+	})
+	return newOrder
+}
+
+// Manejar stock --> plus
+export const updateStock = async (itemId, quantity) => {
+	const item = await getDoc(doc(db, "productos", itemId))
+	await updateDoc(doc(db, "productos", itemId), {
+		stock: item.data().stock - quantity,
+	})
+}
+
+export default db
+

@@ -4,11 +4,11 @@ import ItemCount from './ItemCount';
  
 const ItemDetail = ({ producto }) => {
   const { id, categoria, descripción, name, imgUrl, precio, stock } =
-    producto;
+  producto;
   
   const [terminar, setTerminar] = useState(false);
 
-  const onAdd = (count) => {
+  const onAdd = ( ) => {
     setTerminar(true);
   }
 
@@ -30,21 +30,24 @@ const ItemDetail = ({ producto }) => {
         <img src={imgUrl} style={{ width: '300px', height: '250px', marginTop: '20px' }} />
         <h1 className="text-5xl font-bold">{name}</h1>
         
-        <p className="py-6">{categoria}</p>
+        <p className="py-6">Categoría: {categoria}</p>
 
-        <p className="py-6">{descripción}</p>
+        <p className="py-6">Detalles del producto: {descripción}</p>
+
+        <p className="py-6">Cantidad disponible: {stock}</p>
+
 
         <div className="inline-block align-bottom mr-5">
           <span className="font-bold text-5xl leading-none align-baseline">
-            {precio}
+            Precio: ${precio}
           </span>
         </div>
 
           {terminar ? (
-            <Link to="/cart" className="btn bg-primary text-white btn-block ">
-              Ir a comprar
-            </Link>
-
+            <><Link to="/cart" className="btn bg-primary text-white btn-block ">
+            Ir a comprar
+          </Link>
+            <Link to="/" className="btn bg-primary text-white btn-block ">  Seguir comprando </Link>  </>
           ) : (
             <ItemCount onAdd={onAdd} stock={producto.stock} id={id} />
             )}
@@ -54,6 +57,4 @@ const ItemDetail = ({ producto }) => {
 	)
 }
       
-
-
 export default ItemDetail

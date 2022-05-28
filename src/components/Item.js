@@ -36,15 +36,10 @@ const Item = ({ producto }) => {
 				</figure>
 				<div className="card-body">
 					<h2 className="card-title">{producto.name}</h2>
- 					{producto.descripción}
-					<div className="inline-block align-bottom mr-5">
-						<span className="font-bold text-5xl leading-none align-baseline">
-							{producto.precio}
-						</span>
-					</div>
+ 					 
 					<div className="card-actions justify-end">
 						<Link to={`/product/${producto.id}`} className="btn btn-primary">
-							Ver más
+							Detalles
 						</Link>
 					</div>
 				</div>

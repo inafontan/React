@@ -1,7 +1,7 @@
 import NavBar from './components/NavBar';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ItemListContainer  from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemDetailContainer  from './components/ItemDetailContainer';
 import CartContextProvider from './components/context/CartContext';
 import AppContextProvider from './components/context/AppContext';
 import CartView from './components/CartView';
@@ -22,8 +22,6 @@ function App() {
           </BrowserRouter>
         </CartContextProvider>
       </AppContextProvider>
-                    <button onClick={ () => dataToFirestore() }>Guardar en Firestore</button>
-
     </>
   )
 }

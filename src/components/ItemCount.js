@@ -35,7 +35,7 @@ const ItemCount = ({ stock, onAdd, id }) => {
 				<button
 					className="bg-primary text-white btn-block"
 					onClick={handleRemove}
-					disabled={count === 0}
+					
 				>
 					-
 				</button>

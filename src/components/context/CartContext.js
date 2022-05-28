@@ -7,7 +7,7 @@ const CartContextProvider = ({ children }) => {
     
     const [cart, setCart] = useState([])          
 
-    const isInCart = (id) => cart.find((item) => item.id === id)   // busca si el producto ya esta en el carrito
+    const isInCart = (id) => cart.find((prod) => prod.id === id)   // busca si el producto ya esta en el carrito
 
     const addToCart = (producto, cantidad) => {
         const newCart = [...cart]
@@ -29,15 +29,16 @@ const CartContextProvider = ({ children }) => {
     const deleteFromCart = (producto) => {
         const newCart = [...cart]
 
-        const itemIsInCart = isInCart(producto.id)
+        const productoIsInCart = isInCart(producto.id)
 
-        if (!itemIsInCart) {
+        if (!productoIsInCart) {
             return
         }
 
-        const deleteItem = newCart.filter((prod) => prod.id !== producto.id)
+        const deleteProducto = newCart.filter(
+            (prod) => prod.id !== productoIsInCart.id)
 
-        setCart(deleteItem)
+        setCart(deleteProducto)
     }
 
     const deleteCart = () => setCart([])
@@ -49,16 +50,15 @@ const CartContextProvider = ({ children }) => {
         })
         return total
     }
-      
 
     return (
         <CartContext.Provider
             value={{
                 cart,
+                setCart,
                 addToCart,
                 deleteFromCart,
                 deleteCart,
-                setCart,
                 calcPrecioCart,
             }}
         >
@@ -66,7 +66,5 @@ const CartContextProvider = ({ children }) => {
         </CartContext.Provider>
     )
     }
-    
-
 
 export default CartContextProvider

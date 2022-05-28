@@ -20,7 +20,7 @@ const ItemListContainer = ({ greeting }) => {
           : productos;
 
         resolve(myData);
-      }, 1000);
+      }, 500);
     });
 
     getItems
