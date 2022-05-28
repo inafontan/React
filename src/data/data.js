@@ -76,7 +76,7 @@ export const productos = [
 
 const task = new Promise((resp) => {
 	resp(productos)
-}, 2000)
+}, 1000)
 
 export const getItems = () => {
 	return task
