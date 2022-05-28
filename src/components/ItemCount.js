@@ -24,8 +24,6 @@ const ItemCount = ({ stock, onAdd, id }) => {
 	const handleClick = (id, cantidad) => {
 		const findProduct = productos.find(producto => producto.id === id)
 		addToCart(findProduct, cantidad)
-		
-		addToCart(findProduct, cantidad)
 		onAdd(count)
 	}
 

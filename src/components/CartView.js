@@ -25,7 +25,7 @@ const styleCartView = {
             borderRadius: '10px',
         }
  function CartView() {
-    const { cart, deleteFromCart, calcPrecioCart } = useCartContext()
+    const { cart, deleteFromCart, calcPrecioCart} = useCartContext()
 
     if (cart.length === 0) {
         return <div style={styleCartView}>
@@ -43,7 +43,7 @@ const styleCartView = {
                 <p>Cantidad: {producto.quantity}</p>
                 <p>Precio Unitario: ${producto.producto.precio}</p>
                 <p>Total: ${producto.producto.precio * producto.quantity}</p>
-                <button onClick={() => deleteFromCart(producto.id)}>Eliminar</button>
+                <button onClick={() => deleteFromCart(producto.producto.id)}>Eliminar</button>
             </div>
         )))}
             <div style={styleCartView}>
