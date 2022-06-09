@@ -6,7 +6,7 @@ export const productos = [
         name: 'All in One',
         imgUrl: 'https://www.tecnogeek.com/images/notas13/c205/c205-01.jpg',
         precio: '100',
-        stock: '1'
+        stock: '3'
     },
     {
         id: 1,
@@ -15,7 +15,7 @@ export const productos = [
         name: 'Bici Fija',
         imgUrl: 'http://ranbak.com.ar/timthumb.php?src=/archivos/productos/16015129521515_400n2.jpg&h=1000&w=1000',
         precio: '100',
-        stock: '1'
+        stock: '4'
 
     }, 
     {
@@ -25,7 +25,7 @@ export const productos = [
         name: 'Espejo Madera',
         imgUrl: 'https://www.elmueble.com/medio/2021/12/24/espejo-cuadrado-madera-la-redoute_b303b7b5_1200x1200.jpeg',
         precio: '100',
-        stock: '2'
+        stock: '3'
     },
     {
         id: 3,
@@ -34,7 +34,7 @@ export const productos = [
         name: 'Monitor Samsung',
         imgUrl: 'https://www.computershopping.com.ar/Images/Productos/Grandes/732nw_g.jpg',
         precio: '100',
-        stock: '1'
+        stock: '5'
     },
     {
         id: 4,
@@ -43,7 +43,7 @@ export const productos = [
         name: 'PlayStation 4',
         imgUrl: 'https://www.necxus.com.ar/products_image/12720/1000x1000_1.jpg',
         precio: '100',
-        stock: '1'
+        stock: '4'
     },
     {
         id: 5,
@@ -52,7 +52,7 @@ export const productos = [
         name: 'PlayStation 3',
         imgUrl: 'https://raw.githubusercontent.com/inafontan/ventadewhatsapp/04d7c28d503b55fc6abc37e574713b5211b56978/src/imagenes/play3.jpg',
         precio: '100',
-        stock: '1'
+        stock: '2'
     },
     {
         id: 6,
@@ -61,7 +61,7 @@ export const productos = [
         name: 'Proyector',
         imgUrl: 'https://raw.githubusercontent.com/inafontan/ventadewhatsapp/04d7c28d503b55fc6abc37e574713b5211b56978/src/imagenes/proyector.jpg',
         precio: '100',
-        stock: '1'
+        stock: '3'
     },
     {
         id: 7,
@@ -70,7 +70,7 @@ export const productos = [
         name: 'Ventilador de Pie',
         imgUrl: 'https://raw.githubusercontent.com/inafontan/ventadewhatsapp/04d7c28d503b55fc6abc37e574713b5211b56978/src/imagenes/ventiladorpie.jpg',
         precio: '100',
-        stock: '4'
+        stock: '5'
     },
 ]
 

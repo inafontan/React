@@ -1,16 +1,16 @@
-import React from 'react'
+import React, {useState}  from 'react'
 import { useCartContext } from './/context/CartContext'
 import { Link } from "react-router-dom"
+
 
 const styleCartView = {
             display: 'flex',
             flexDirection: 'column',
-            flexWrap: 'wrap',
-            width: '600px',
+            width: '400px',
             height: 'auto',
             margin: '20px',
             marginTop: '20px',
-            marginLeft: '400px',
+            marginLeft: '500px',
             borderRadius: '10px',
             backgroundColor: 'white',
             boxShadow: '0px 1px 10px #000000',
@@ -24,21 +24,22 @@ const styleCartView = {
             border: '2px solid #000000',
             borderRadius: '10px',
         }
- function CartView() {
+function CartView() {
     const { cart, deleteFromCart, calcPrecioCart} = useCartContext()
 
     if (cart.length === 0) {
         return <div style={styleCartView}>
             <p>No hay productos en el carrito </p>
-                <button className="btn primary"> <Link to="/"> Inicio </Link></button>
+            <button className="btn primary"> <Link to="/"> Inicio </Link></button>
         </div>
-
     }
+
     return (
         <div >
         {cart.map((producto => (
             <div style={styleCartView}
-            key={producto.id}>
+                key={producto.id}>
+                <div><img src={producto.producto.imgUrl} style={{ width: '200px', height: '150px', marginTop: '20px' }} /> </div>
                 <p>Artículo: {producto.producto.name}</p>
                 <p>Cantidad: {producto.quantity}</p>
                 <p>Precio Unitario: ${producto.producto.precio}</p>
