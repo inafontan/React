@@ -10,6 +10,6 @@ Cuenta con
 
 ## Dependencias
 
-React Router Dom para la navegación
-DaisyUI para dar estilo a distintos componentes
-Bootstrap para dar estilo a a NavBar
+- React Router Dom para la navegación
+- DaisyUI para dar estilo a distintos componentes
+- Bootstrap para dar estilo a a NavBar
