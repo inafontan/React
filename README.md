@@ -2,7 +2,7 @@
 
 E-commerce que nace de la necesidad de la venta de articulos personalss por mudanza, pretendiendo compartir entre los contactos de whatsapp solo un link.
 
-Cuenta con
+Cuenta con:
 
 - Página principal con vista general de los productos, con imagen y precio.
 - Orden de los productos por categorías.
