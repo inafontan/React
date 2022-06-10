@@ -50,6 +50,7 @@ function CartView() {
             <div style={styleCartView}>
                 <h1>Total de la compra: ${calcPrecioCart()}</h1>
                 <button className="btn primary"> <Link to="/"> Inicio </Link></button>
+                 <button onClick>  Finalizar Compra</button>  
             </div>
         </div>
     )
