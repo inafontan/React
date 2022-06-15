@@ -83,7 +83,33 @@ export const productos = [
         imgUrl: 'https://http2.mlstatic.com/D_NQ_NP_686743-MLA31012305360_062019-O.webp',
         precio: '100',
         stock: '3'
+    }, {
+        id: 10,
+        categoria: 'Electrodomésticos',
+        descripción: 'Cafetera Nespresso - Manual',
+        name: 'Cafetera Nespresso - Cápsulas',
+        imgUrl: 'https://www.aquicompro.com.py/wp-content/uploads/2020/07/Cafetera-Piccolo-Moulinex-1.100.000.jpg',
+        precio: '100',
+        stock: '3'
+    }, {
+        id: 11,
+        categoria: 'Audio & Video',
+        descripción: 'TV 32 Pulgadas - TCL',
+        name: 'Tv TCL',
+        imgUrl: 'https://mobile-support.tcl.com/content/dam/tcl-dam/product/tv-product/a-series/a323-mx/site/pc/product-image/A323%2032_.png',
+        precio: '100',
+        stock: '3'
+    }, {
+        id: 12,
+        categoria: 'Decoración',
+        descripción: 'Espejo Redondo',
+        name: 'Espejo Hierro',
+        imgUrl: 'http://d3ugyf2ht6aenh.cloudfront.net/stores/001/250/736/products/espejo-pvc-negro1-e1e726e19ede5acb9415933080002663-640-0.png',
+        precio: '100',
+        stock: '3'
     },
+
+
 ]
 
 const task = new Promise((resp) => {
