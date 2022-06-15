@@ -16,14 +16,14 @@
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
   },
-  "homepage":"https://inafontan.github.io/deploy-react-github-pages-with-ci",
+  "homepage": "https://inafontan.github.io/ventadewhatsapp",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -r https://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@github.com/inafontan/deploy-react-github-pages-with-ci"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
