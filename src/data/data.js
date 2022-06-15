@@ -72,6 +72,15 @@ export const productos = [
         precio: '100',
         stock: '5'
     },
+    {
+        id: 8,
+        categoria: 'Electrodomésticos',
+        descripción: 'Batidora Planetaria',
+        name: 'Batidora Smartlife', 
+        imgUrl: 'https://images.fravega.com/f1000/c478984bef2d7ddfecdf0aa5910eb7a1.jpg',
+        precio: '100',
+        stock: '3'
+    },
 ]
 
 const task = new Promise((resp) => {
