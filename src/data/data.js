@@ -17,7 +17,7 @@ export const productos = [
         precio: '100',
         stock: '4'
 
-    }, 
+    },
     {
         id: 2,
         categoria: 'Decoración',
@@ -35,8 +35,7 @@ export const productos = [
         imgUrl: 'https://www.computershopping.com.ar/Images/Productos/Grandes/732nw_g.jpg',
         precio: '100',
         stock: '5'
-    },
-    {
+    }, {
         id: 4,
         categoria: 'Informática',
         descripción: '1Tb - Con 10 Juegos - 2 Joystick',
@@ -44,8 +43,7 @@ export const productos = [
         imgUrl: 'https://www.necxus.com.ar/products_image/12720/1000x1000_1.jpg',
         precio: '100',
         stock: '4'
-    },
-    {
+    }, {
         id: 5,
         categoria: 'Informática',
         descripción: '10 Juegos - 2 Joystick',
@@ -53,8 +51,7 @@ export const productos = [
         imgUrl: 'https://raw.githubusercontent.com/inafontan/ventadewhatsapp/04d7c28d503b55fc6abc37e574713b5211b56978/src/imagenes/play3.jpg',
         precio: '100',
         stock: '2'
-    },
-    {
+    }, {
         id: 6,
         categoria: 'Audio & Video',
         descripción: 'Mini Proyector Portatil Led - 1200 Lumenes',
@@ -62,8 +59,7 @@ export const productos = [
         imgUrl: 'https://raw.githubusercontent.com/inafontan/ventadewhatsapp/04d7c28d503b55fc6abc37e574713b5211b56978/src/imagenes/proyector.jpg',
         precio: '100',
         stock: '3'
-    },
-    {
+    }, {
         id: 7,
         categoria: 'Electrodomésticos',
         descripción: 'Ventilador 3 posiciones',
@@ -71,31 +67,29 @@ export const productos = [
         imgUrl: 'https://raw.githubusercontent.com/inafontan/ventadewhatsapp/04d7c28d503b55fc6abc37e574713b5211b56978/src/imagenes/ventiladorpie.jpg',
         precio: '100',
         stock: '5'
-    },
-    {
+    }, {
         id: 8,
         categoria: 'Electrodomésticos',
         descripción: 'Batidora Planetaria',
-        name: 'Batidora Smartlife', 
+        name: 'Batidora Smartlife',
         imgUrl: 'https://images.fravega.com/f1000/c478984bef2d7ddfecdf0aa5910eb7a1.jpg',
         precio: '100',
         stock: '3'
-    },
-    {
+    }, {
         id: 9,
         categoria: 'Electrodomésticos',
         descripción: 'Cafetera Expresso',
-        name: 'Cafetera DeLonghi', 
-        imgUrl: 'https://www.egarpi.es / 235732/cafetera-espresso-delonghi-ec-146-b.jpg',
+        name: 'Cafetera DeLonghi',
+        imgUrl: 'https://http2.mlstatic.com/D_NQ_NP_686743-MLA31012305360_062019-O.webp',
         precio: '100',
         stock: '3'
     },
 ]
 
 const task = new Promise((resp) => {
-	resp(productos)
+    resp(productos)
 }, 1000)
 
 export const getItems = () => {
-	return task
+    return task
 }
