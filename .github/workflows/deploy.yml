@@ -8,8 +8,8 @@ jobs:
   name: deploy app
   runs-on: ubuntu-latest
   strategy:
-   matrix:
-    node-version: [ "12.x" ]
+    matrix:
+      node-version: [ "12.x" ]
   steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1 
@@ -18,10 +18,16 @@ jobs:
     - name: install packages
       run: npm install
     - name: registry github user
-      run: |
+      run: /
        git config --global user.email <inafontan@gmail.com>
        git config --global user.name <inafontan>
     - name: deploy the app
       run: npm run deploy
       env:
           GH_TOKEN: ${{ secrets.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 }}
+
+
+
+  
+  
+   
