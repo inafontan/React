@@ -1,7 +1,7 @@
 {
   "name": "ventadewhatsapp",
   "version": "0.1.0",
-  "homepage": "https://inafontan.github.io/deploy-react-github-pages-with-ci/",
+  "homepage": "https://inafontan.github.io/deploy-react-gh-pages",
   "private": true,
 
   "dependencies": {
