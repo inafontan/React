@@ -81,6 +81,15 @@ export const productos = [
         precio: '100',
         stock: '3'
     },
+    {
+        id: 9,
+        categoria: 'Electrodomésticos',
+        descripción: 'Cafetera Expresso',
+        name: 'Cafetera DeLonghi', 
+        imgUrl: 'https://www.egarpi.es / 235732/cafetera-espresso-delonghi-ec-146-b.jpg',
+        precio: '100',
+        stock: '3'
+    },
 ]
 
 const task = new Promise((resp) => {
