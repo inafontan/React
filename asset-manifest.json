@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/deploy-react-gh-pages/static/css/main.05af31f9.css",
-    "main.js": "/deploy-react-gh-pages/static/js/main.5b6e5692.js",
-    "index.html": "/deploy-react-gh-pages/index.html",
-    "main.05af31f9.css.map": "/deploy-react-gh-pages/static/css/main.05af31f9.css.map",
-    "main.5b6e5692.js.map": "/deploy-react-gh-pages/static/js/main.5b6e5692.js.map"
+    "main.css": "/ventadewhatsapp/static/css/main.05af31f9.css",
+    "main.js": "/ventadewhatsapp/static/js/main.e14d73fb.js",
+    "index.html": "/ventadewhatsapp/index.html",
+    "main.05af31f9.css.map": "/ventadewhatsapp/static/css/main.05af31f9.css.map",
+    "main.e14d73fb.js.map": "/ventadewhatsapp/static/js/main.e14d73fb.js.map"
   },
   "entrypoints": [
     "static/css/main.05af31f9.css",
-    "static/js/main.5b6e5692.js"
+    "static/js/main.e14d73fb.js"
   ]
 }
